@@ -1,0 +1,34 @@
+.textarea-block-container {
+  margin: 15px;
+}
+
+.textarea-container {
+  display: flex;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.textarea-label {
+  font-weight: 400;
+  font-size: 1.7em;
+}
+
+.textarea-element {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  font-size: 1.5em;
+  height: 9em;
+  padding: 20px;
+  outline: none;
+  resize: none;
+}
+
+.validation-icon {
+  margin-left: 15px;
+}
+
+.validation-message {
+  font-size: 0.9em;
+  color: #ff3455;
+  text-align: right;
+}

@@ -1,0 +1,143 @@
+$white: #ffffff;
+$black: #000000;
+$red: #ff0a55;
+$light-grey: #f1f1f1;
+$charcoal: #3f3d56;
+$green: #03e381;
+$light-red: #ff7e7e;
+
+* {
+	font-family: "Work Sans", sans-serif;
+}
+
+.ui-border {
+	border-width: 1px;
+
+	&--none {
+		border: none;
+	}
+
+	&--solid {
+		border-style: solid;
+	}
+
+	&--dashed {
+		border-style: dashed;
+	}
+
+	&--dotted {
+		border-style: dotted;
+	}
+
+	&--2 {
+		border-width: 2px;
+	}
+
+	&-color {
+		&--black {
+			border-color: $black;
+		}
+
+		&--white {
+			border-color: $white;
+		}
+
+		&--light-grey {
+			border-color: $light-grey;
+		}
+
+		&--red {
+			border-color: $red;
+		}
+
+		&--charcoal {
+			border-color: $charcoal;
+		}
+
+		&--green {
+			border-color: $green;
+		}
+
+		&--light-red {
+			border-color: $light-red;
+		}
+	}
+}
+
+.ui {
+	&--black {
+		color: $black;
+	}
+
+	&--white {
+		color: $white;
+	}
+
+	&--light-grey {
+		color: $light-grey;
+	}
+
+	&--red {
+		color: $red;
+	}
+
+	&--charcoal {
+		color: $charcoal;
+	}
+
+	&--green {
+		color: $green;
+	}
+
+	&--light-red {
+		color: $light-red;
+	}
+}
+
+.ui-bg {
+	&--black {
+		background-color: $black;
+	}
+
+	&--white {
+		background-color: $white;
+	}
+
+	&--light-grey {
+		background-color: $light-grey;
+	}
+
+	&--red {
+		background-color: $red;
+	}
+
+	&--charcoal {
+		background-color: $charcoal;
+	}
+
+	&--green {
+		background-color: $green;
+	}
+
+	&--light-red {
+		background-color: $light-red;
+	}
+}
+
+.ui-width {
+	&--100 {
+		width: 100%;
+	}
+
+	&--90 {
+		width: 90%;
+	}
+}
+
+.black-eye {
+	fill: #000000;
+}
+
+.grey-eye {
+	fill: #7a7a7a;
+}

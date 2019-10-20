@@ -1,0 +1,49 @@
+.input-block-container {
+  margin: 15px;
+}
+
+.input-container {
+  display: flex;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.input-label {
+  font-weight: 400;
+  font-size: 1.7em;
+}
+
+.input-element {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  font-size: 1.5em;
+  padding: 20px;
+  outline: none;
+}
+
+.eye-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 10px;
+}
+
+.eye {
+  height: 1.7em;
+  width: 3.4em;
+  cursor: pointer;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.validation-icon {
+  margin-left: 15px;
+}
+
+.validation-message {
+  font-size: 0.9em;
+  color: #ff3455;
+  text-align: right;
+}

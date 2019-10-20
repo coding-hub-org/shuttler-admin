@@ -1,0 +1,48 @@
+.title-container {
+	display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.title {
+	display: inline-block;
+
+	&--primary {
+		font-size: 2.6em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&--secondary {
+		font-size: 2.1em;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	&--tertiary {
+		font-size: 1.6em;
+		font-weight: 400;
+	}
+}
+
+.title-decoration {
+	display: inline-block;
+
+	&--primary {
+		width: 15px;
+		height: 5em;
+		margin-right: 30px;
+	}
+
+	&--secondary {
+		width: 12px;
+		height: 4.4em;
+		margin-right: 25px;
+	}
+
+	&--secondary {
+		width: 12px;
+		height: 3.8em;
+		margin-right: 20px;
+	}
+}
