@@ -13,14 +13,15 @@ const App: React.FC = () => {
 		<div className="App">
 			<Router>
 				<Navbar />
-				<Switch>
+        <SendNotificationsPage />
+				{/* <Switch>
 					<StrictPublicRoute exact path="/" component={LoginPage} />
 					<PrivateRoute
 						exact
 						path="/send-notifications"
 						component={SendNotificationsPage}
 					/>
-				</Switch>
+				</Switch> */}
 			</Router>
 		</div>
 	);

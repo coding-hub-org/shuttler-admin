@@ -4,6 +4,7 @@ import classnames from "classnames";
 
 import styles from "./index.module.scss";
 
+import Logo from "../../assets/icons/logo.png";
 import LoginLanding from "../../assets/landing/login_landing.png";
 import InputBlock from "../../components/InputBlock";
 import Title from "../../components/Title";
@@ -16,6 +17,11 @@ const LoginPage: FunctionComponent = () => {
 	return (
 		<div className={styles["login-page-container"]}>
 			<div className={styles["left-container"]}>
+        <img
+						src={Logo}
+						alt=""
+						className={classnames(styles["shuttler-logo"])}
+					/>
 				<form className={styles["login-form"]}>
 					<Title>Admin Login</Title>
 					<InputBlock
@@ -48,7 +54,11 @@ const LoginPage: FunctionComponent = () => {
 			<div
 				className={classnames(styles["right-container"], "ui-bg--light-grey")}
 			>
-				<img src={LoginLanding} alt="login-landing" className={styles["login-landing"]} />
+				<img
+					src={LoginLanding}
+					alt="login-landing"
+					className={styles["login-landing"]}
+				/>
 			</div>
 		</div>
 	);
