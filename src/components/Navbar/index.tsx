@@ -20,17 +20,14 @@ const Navbar: FunctionComponent = () => {
 			</div>
 			<div className={styles["flex-grow--5"]} />
 			<div className={styles["link-container"]}>
-				<div className={styles["link-parent"]}>
 					<Link className={classnames(styles["link"])} to="/">
-						Add admins
+						<div>Add admins</div>
 					</Link>
-				</div>
-				<div className={styles["link-parent"]}>
 					<Link className={classnames(styles["link"])} to="/">
-						Send Notifications
+						<div>Send Notifications</div>
 					</Link>
 					{/* <Link to="/">Check Shuttle History</Link> */}
-				</div>
+
 
 				<div className={styles["link-parent"]}>
 					<Button size="sm">Sign Out</Button>

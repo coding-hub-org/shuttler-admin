@@ -12,16 +12,16 @@ const App: React.FC = () => {
 	return (
 		<div className="App">
 			<Router>
-				<Navbar />
-        <SendNotificationsPage />
-				{/* <Switch>
+				{/* <Navbar /> */}
+        {/* <SendNotificationsPage /> */}
+				<Switch>
 					<StrictPublicRoute exact path="/" component={LoginPage} />
 					<PrivateRoute
 						exact
 						path="/send-notifications"
 						component={SendNotificationsPage}
 					/>
-				</Switch> */}
+				</Switch>
 			</Router>
 		</div>
 	);
