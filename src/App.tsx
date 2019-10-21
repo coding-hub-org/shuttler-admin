@@ -12,7 +12,8 @@ const App: React.FC = () => {
 	return (
 		<div className="App">
 			<Router>
-				<Navbar />
+				{/* <Navbar /> */}
+        {/* <SendNotificationsPage /> */}
 				<Switch>
 					<StrictPublicRoute exact path="/" component={LoginPage} />
 					<PrivateRoute
