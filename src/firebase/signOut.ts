@@ -1,5 +1,6 @@
-import firebase from './firebase';
-export const signOut = () => {
+import firebase from "./firebase";
+
+const signOut = () => {
 	firebase
 		.auth()
 		.signOut()
@@ -10,3 +11,5 @@ export const signOut = () => {
 			console.error(error);
 		});
 };
+
+export default signOut;

@@ -1,5 +1,6 @@
 import firebase from "./firebase";
-export const sendNotification = (title:string, message:string) => {
+
+const sendNotification = (title: string, message: string) => {
 	firebase
 		.firestore()
 		.collection("notifications")
@@ -17,3 +18,5 @@ export const sendNotification = (title:string, message:string) => {
 			console.error("Error adding document: ", error);
 		});
 };
+
+export default sendNotification;

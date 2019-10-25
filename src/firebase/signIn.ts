@@ -1,5 +1,6 @@
 import firebase from "./firebase";
-export const signInWithEmailAndPassword = (email:string, password:string) => {
+
+const signInWithEmailAndPassword = (email: string, password: string) => {
 	firebase
 		.auth()
 		.signInWithEmailAndPassword(email, password)
@@ -8,3 +9,4 @@ export const signInWithEmailAndPassword = (email:string, password:string) => {
 		});
 };
 
+export default signInWithEmailAndPassword;

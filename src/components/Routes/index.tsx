@@ -1,6 +1,8 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 
+import { checkAdmin } from "../../firebase";
+
 export const PrivateRoute: FunctionComponent<{
 	exact?: boolean;
 	path: string;
@@ -9,7 +11,7 @@ export const PrivateRoute: FunctionComponent<{
 	const [admin, setAdmin] = useState(false);
 
 	useEffect(() => {
-		// setAdmin(checkAdmin())
+		setAdmin(checkAdmin());
 	}, []);
 
 	return admin ? (
@@ -27,7 +29,7 @@ export const StrictPublicRoute: FunctionComponent<{
 	const [admin, setAdmin] = useState(false);
 
 	useEffect(() => {
-		// setAdmin(checkAdmin())
+		setAdmin(checkAdmin());
 	}, []);
 
 	return admin ? (
