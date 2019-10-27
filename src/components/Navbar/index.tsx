@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/icons/logo.png";
 import styles from "./index.module.scss";
 import Button from "../Button";
+import { signOut } from "../../firebase";
 
 const Navbar: FunctionComponent = () => {
 	return (
@@ -20,17 +21,17 @@ const Navbar: FunctionComponent = () => {
 			</div>
 			<div className={styles["flex-grow--5"]} />
 			<div className={styles["link-container"]}>
-					<Link className={classnames(styles["link"])} to="/">
+					<Link className={classnames(styles["link"])} to="/moderation">
 						<div>Add admins</div>
 					</Link>
-					<Link className={classnames(styles["link"])} to="/">
+					<Link className={classnames(styles["link"])} to="/send-notifications">
 						<div>Send Notifications</div>
 					</Link>
 					{/* <Link to="/">Check Shuttle History</Link> */}
 
 
 				<div className={styles["link-parent"]}>
-					<Button size="sm">Sign Out</Button>
+					<Button size="sm" onClick={signOut}>Sign Out</Button>
 				</div>
 			</div>
 

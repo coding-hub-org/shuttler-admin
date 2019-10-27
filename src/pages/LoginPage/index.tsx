@@ -9,6 +9,7 @@ import LoginLanding from "../../assets/landing/login_landing.png";
 import InputBlock from "../../components/InputBlock";
 import Title from "../../components/Title";
 import Button from "../../components/Button";
+import { signInWithEmailAndPassword } from "../../firebase";
 
 const LoginPage: FunctionComponent = () => {
 	const [email, setEmail] = useState<string>("");
@@ -17,11 +18,11 @@ const LoginPage: FunctionComponent = () => {
 	return (
 		<div className={styles["login-page-container"]}>
 			<div className={styles["left-container"]}>
-        <img
-						src={Logo}
-						alt=""
-						className={classnames(styles["shuttler-logo"])}
-					/>
+				<img
+					src={Logo}
+					alt=""
+					className={classnames(styles["shuttler-logo"])}
+				/>
 				<form className={styles["login-form"]}>
 					<Title>Admin Login</Title>
 					<InputBlock
@@ -29,7 +30,7 @@ const LoginPage: FunctionComponent = () => {
 						type="email"
 						id="email"
 						value={email}
-						validated={email.endsWith("plattsburgh.edu")}
+						validated={email.endsWith("@plattsburgh.edu")}
 						validationMessage={"Must be a valid plattsburgh email."}
 						onChange={(val: string) => {
 							setEmail(val);
@@ -48,7 +49,15 @@ const LoginPage: FunctionComponent = () => {
 						}}
 						placeholder="**********"
 					/>
-					<Button>Login</Button>
+					<Button
+						onClick={() => {
+							if (!email.endsWith("@plattsburgh.edu") || password.length < 8) {
+								alert("Please enter your email and/or password");
+							} else signInWithEmailAndPassword(email, password);
+						}}
+					>
+						Login
+					</Button>
 				</form>
 			</div>
 			<div

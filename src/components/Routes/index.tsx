@@ -1,18 +1,16 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { FunctionComponent, useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
+
+import AuthContext from "../../AuthContext";
 
 export const PrivateRoute: FunctionComponent<{
 	exact?: boolean;
 	path: string;
 	component: FunctionComponent<{}>;
 }> = ({ exact = false, path, component }) => {
-	const [admin, setAdmin] = useState(false);
+	const { loggedIn, admin } = useContext(AuthContext);
 
-	useEffect(() => {
-		// setAdmin(checkAdmin())
-	}, []);
-
-	return admin ? (
+	return loggedIn && admin ? (
 		<Route exact={exact} path={path} component={component} />
 	) : (
 		<Redirect to="/" />
@@ -24,13 +22,9 @@ export const StrictPublicRoute: FunctionComponent<{
 	path: string;
 	component: FunctionComponent<{}>;
 }> = ({ exact = false, path, component }) => {
-	const [admin, setAdmin] = useState(false);
+	const { loggedIn, admin } = useContext(AuthContext);
 
-	useEffect(() => {
-		// setAdmin(checkAdmin())
-	}, []);
-
-	return admin ? (
+	return loggedIn && admin ? (
 		<Redirect to="/send-notifications" />
 	) : (
 		<Route exact={exact} path={path} component={component} />
