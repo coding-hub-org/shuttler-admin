@@ -1,28 +1,44 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, {
+	FunctionComponent,
+	useState,
+	useContext,
+	useEffect
+} from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 import LoginPage from "./pages/LoginPage";
 import SendNotificationsPage from "./pages/SendNotificationsPage";
 import { PrivateRoute, StrictPublicRoute } from "./components/Routes";
+import Navbar from "./components/Navbar";
+import AuthContext from "./AuthContext";
 
 import "./App.scss";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { authStateChange, checkAdmin } from "./firebase";
 
-const App: React.FC = () => {
+const App: FunctionComponent = () => {
+	const [loggedIn, setLoggedIn] = useState(false);
+	const [admin, setAdmin] = useState(false);
+
+	useEffect(() => {
+		checkAdmin(setAdmin);
+	}, [loggedIn]);
+
+	authStateChange(setLoggedIn);
 	return (
 		<div className="App">
-			<Router>
-				{/* <Navbar /> */}
-        {/* <SendNotificationsPage /> */}
-				<Switch>
-					<StrictPublicRoute exact path="/" component={LoginPage} />
-					<PrivateRoute
-						exact
-						path="/send-notifications"
-						component={SendNotificationsPage}
-					/>
-				</Switch>
-			</Router>
+			<AuthContext.Provider value={{ loggedIn, admin }}>
+				<Router>
+					{loggedIn && admin && <Navbar />}
+					<Switch>
+						<StrictPublicRoute exact path="/" component={LoginPage} />
+						<PrivateRoute
+							exact
+							path="/send-notifications"
+							component={SendNotificationsPage}
+						/>
+					</Switch>
+				</Router>
+			</AuthContext.Provider>
 		</div>
 	);
 };

@@ -1,6 +1,7 @@
 import firebase from "./firebase";
+import { Dispatch, SetStateAction } from "react";
 
-const authStateChange = (fnc: Function) => {
+const authStateChange = (fnc: Dispatch<SetStateAction<boolean>>) => {
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 			fnc(true);

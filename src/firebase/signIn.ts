@@ -6,7 +6,8 @@ const signInWithEmailAndPassword = (email: string, password: string) => {
 		.signInWithEmailAndPassword(email, password)
 		.catch(error => {
 			console.error("Error signing in:", error.code, " - ", error.message);
-		});
+    });
+    console.log("ran")
 };
 
 export default signInWithEmailAndPassword;
