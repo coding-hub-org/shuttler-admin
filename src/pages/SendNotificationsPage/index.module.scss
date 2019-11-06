@@ -68,8 +68,14 @@
     margin-left: 60px;
   }
 }
-
-@media (max-width: 1000px) {
+@media (max-width: 1000px)
+{
+	.left-container,
+	.only-desktop {
+		display: none;
+		  }
+}
+@media (max-width: 600px) {
 	.right-container {
 		.notification-form {
 			width: 80%;
@@ -80,9 +86,15 @@
 	.left-container,
 	.only-desktop {
     display: none;
-  }
+  	}
 
-  .only-tablet {
+  	.only-tablet {
 		display: block;
+	}
+	input{
+		max-width: 65vw;
+	}
+	textarea{
+		max-width: 65vw;
 	}
 }
