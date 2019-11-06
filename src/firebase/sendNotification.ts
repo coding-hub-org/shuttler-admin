@@ -5,7 +5,8 @@ const sendNotification = (title: string, message: string) => {
 		.firestore()
 		.collection("notifications")
 		.add({
-			date: Date(),
+      date: Date(),
+      dateFlutter: Date.now(), 
 			title,
 			description: message
 		})

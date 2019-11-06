@@ -7,7 +7,7 @@
 }
 
 .logo-container {
-  box-sizing: border-box;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -37,13 +37,13 @@
 
 	div {
 		padding: 5px 15px;
-    border-radius: 10px;
-    transition: 0.4s ease-in-out;
-  }
+		border-radius: 10px;
+		transition: 0.4s ease-in-out;
+	}
 
-  div:hover {
-    background-color: #e5e5e5;
-  }
+	div:hover {
+		background-color: #e5e5e5;
+	}
 }
 
 .flex-grow {
@@ -51,19 +51,90 @@
 		flex-grow: 1;
 	}
 
-	&--2 {
-		flex-grow: 2;
-	}
-
-	&--3 {
-		flex-grow: 3;
-	}
-
-	&--4 {
-		flex-grow: 4;
-	}
-
 	&--5 {
 		flex-grow: 5;
+	}
+}
+
+.mobile-link--container {
+	display: none;
+}
+
+.hamburger-icon {
+	width: 40px;
+  height: 30px;
+	position: relative;
+  margin: auto;
+  margin-right: 15px;
+	transform: rotate(0deg);
+	transition: 0.9s ease-in-out;
+	cursor: pointer;
+
+	span {
+		display: block;
+		position: absolute;
+		background-color: #000000;
+		height: 5px;
+		width: 100%;
+		border-radius: 9px;
+		opacity: 1;
+		left: 0;
+		transform: rotate(0deg);
+		transition: 0.5s ease-in-out;
+	}
+
+	span:nth-child(1) {
+		top: 0px;
+	}
+
+	span:nth-child(2),
+	.menu-icon span:nth-child(3) {
+		top: 15px;
+	}
+
+	span:nth-child(4) {
+		top: 30px;
+	}
+}
+
+.hamburger-icon-open {
+	span {
+		background-color: #f05d5e;
+	}
+
+	span:nth-child(1) {
+		top: 15px;
+		width: 0%;
+		left: 50%;
+	}
+
+	span:nth-child(4) {
+		top: 15px;
+		width: 0%;
+		left: 50%;
+	}
+
+	span:nth-child(2) {
+		transform: rotate(45deg) translate(-15%, -100%);
+	}
+
+	span:nth-child(3) {
+		transform: rotate(-45deg) translate(-15%, 100%);
+	}
+}
+
+@media (max-width: 1024px) {
+	.link-container {
+		display: none;
+	}
+
+	.shuttler-logo {
+		padding: 5px;
+	}
+
+	.mobile-link--container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 }

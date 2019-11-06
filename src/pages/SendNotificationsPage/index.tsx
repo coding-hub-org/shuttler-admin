@@ -8,6 +8,7 @@ import InputBlock from "../../components/InputBlock";
 import MessageBlock from "../../components/MessageBlock";
 
 import SendNotificationsLanding from "../../assets/landing/send_notification.png";
+import { sendNotification } from "../../firebase";
 
 const SendNotificationsPage: FunctionComponent = () => {
 	const [title, setTitle] = useState("");
@@ -17,7 +18,7 @@ const SendNotificationsPage: FunctionComponent = () => {
 		if (title === "" || message === "") {
 			alert("Cant be empty");
 		} else {
-			// sendNotification(title, message);
+			sendNotification(title, message);
 
 			setTitle("");
 			setMessage("");
@@ -73,7 +74,7 @@ const SendNotificationsPage: FunctionComponent = () => {
 							label="Message"
 							id="email"
 							value={title}
-							validated={title.length !== 0}
+							validated={message.length !== 0}
 							validationMessage={"Please enter a message"}
 							onChange={(val: string) => {
 								setMessage(val);
@@ -82,7 +83,7 @@ const SendNotificationsPage: FunctionComponent = () => {
 							color="white"
 						/>
 
-						<Button onClick={handleSubmit} size="sm">
+						<Button onClick={() => handleSubmit()} size="sm">
 							Send
 						</Button>
 					</form>
