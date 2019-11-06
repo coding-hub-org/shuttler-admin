@@ -30,9 +30,10 @@ const Navbar: FunctionComponent = () => {
 					{/* <Link to="/">Check Shuttle History</Link> */}
 
 
-				</div>
+				
 				<div className={styles["link-parent"]}>
 					<Button size="sm" onClick={signOut}>Sign Out</Button>
+				</div>
 				</div>
 			<div className={styles["flex-grow--1"]} />
 		</div>

@@ -67,24 +67,3 @@
 		flex-grow: 5;
 	}
 }
-@media screen and (max-width: 600px){
-	.navbar-container{
-		flex-wrap: wrap;
-	}
-	.link-container{
-		order:3;
-		display:block;
-		.link{
-			display:inline-flex;
-			font-size: 1.2em;
-			font-weight: 500;
-			
-		}		
-	}
-	.link-parent{
-		order:2;
-		float:right;
-		margin-right:0px;
-		flex:1 0 ;
-	}
-}
